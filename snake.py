@@ -1,21 +1,26 @@
 from turtle import Turtle
-STARTING_POSITION =  [(0, 0), (-20, 0), (-40, 0)]
+STARTING_POSITION = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
 UP = 90
 DOWN = 270
 RIGHT = 0
 LEFT = 180
 
+
 class Snake:
     def __init__(self):
         self.segments = []
         for i in STARTING_POSITION:
-            self.timy = Turtle(shape="square")
-            self.timy.color("white")
-            self.timy.pu()
-            self.timy.goto(i)
-            self.segments.append(self.timy)
+
+
+            self.tim = Turtle(shape="square")
+            self.tim.color("white")
+            self.tim.pu()
+            self.tim.goto(i)
+            self.segments.append(self.tim)
         self.head = self.segments[0]
+
+
 
     def move(self):
         for seg in range(len(self.segments) - 1, 0, -1):
