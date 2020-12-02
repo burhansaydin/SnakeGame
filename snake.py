@@ -11,14 +11,20 @@ class Snake:
     def __init__(self):
         self.segments = []
         for i in STARTING_POSITION:
+            self.new(i)
 
-
-            self.tim = Turtle(shape="square")
-            self.tim.color("white")
-            self.tim.pu()
-            self.tim.goto(i)
-            self.segments.append(self.tim)
         self.head = self.segments[0]
+
+    def new(self, i):
+        self.tim = Turtle(shape="square")
+        self.tim.color("white")
+        self.tim.pu()
+        self.tim.goto(i)
+        self.segments.append(self.tim)
+
+    def extend(self):
+        self.new(self.segments[-1].position())
+
 
 
 
